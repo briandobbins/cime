@@ -204,7 +204,7 @@ This allows using a different mpirun command to launch unit tests
 
   <machine MACH="aws-arise">
 		<DESC></DESC>
-    <NODENAME_REGEX>.*.ip-*</NODENAME_REGEX>
+    <NODENAME_REGEX>ip.*.compute.internal</NODENAME_REGEX>
     <OS>LINUX</OS>
     <COMPILERS>intel</COMPILERS>
     <MPILIBS>impi</MPILIBS>

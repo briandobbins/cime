@@ -481,7 +481,7 @@ using a fortran linker.
   </LDFLAGS>
 </compiler>
 
-<compiler MACH="aws-arise" compiler="intel">
+<compiler MACH="aws-arise" COMPILER="intel">
   <CFLAGS>
     <append> -qopt-report -march=core-avx2 -mtune=core-avx2 -no-fma</append>
   </CFLAGS>
@@ -499,7 +499,6 @@ using a fortran linker.
     <append MODEL="gptl"> -DHAVE_NANOTIME -DBIT64 -DHAVE_VPRINTF -DHAVE_BACKTRACE -DHAVE_SLASHPROC -DHAVE_COMM_F2C -DHAVE_TIMES -DHAVE_GETTIMEOFDAY </append>
   </CPPDEFS>
   <NETCDF_PATH>/opt/ncar/software</NETCDF_PATH>
-  <PIO_FILESYSTEM_HINTS>lustre</PIO_FILESYSTEM_HINTS>
   <PNETCDF_PATH>/opt/ncar/software</PNETCDF_PATH>
   <SLIBS>
     <base> -llapack -lblas -lnetcdf -lnetcdff -lpnetcdf</base>
