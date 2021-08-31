@@ -501,7 +501,7 @@ using a fortran linker.
   <NETCDF_PATH>/opt/ncar/software</NETCDF_PATH>
   <PNETCDF_PATH>/opt/ncar/software</PNETCDF_PATH>
   <SLIBS>
-    <base> -llapack -lblas -lnetcdf -lnetcdff -lpnetcdf -lmkl_intel_ilp64 -lmkl_intel_thread -lmkl_core -liomp5 -lpthread -lm -ldl </base>
+    <base> -lnetcdf -lnetcdff -lpnetcdf -lmkl_intel_ilp64 -lmkl_intel_thread -lmkl_core -liomp5 -lpthread -lm -ldl </base>
 	</SLIBS>
 </compiler>
 
