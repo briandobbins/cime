@@ -198,6 +198,17 @@
     </queues>
   </batch_system>
 
+  <batch_system MACH="aws" type="slurm">
+    <batch_submit>sbatch</batch_submit>
+    <submit_args>
+      <arg flag="--time" name="$JOB_WALLCLOCK_TIME"/>
+      <arg flag="-p" name="$JOB_QUEUE"/>
+    </submit_args>
+    <queues>
+      <queue walltimemax="48:00:00" nodemin="1" nodemax="64">regular</queue>
+    </queues>
+  </batch_system>
+
   <!-- bluewaters is PBS -->
   <batch_system MACH="bluewaters" type="pbs" >
     <jobid_pattern>(\d+.bw)$</jobid_pattern>
