@@ -203,7 +203,7 @@ This allows using a different mpirun command to launch unit tests
 
   <machine MACH="aws">
     <DESC>AWS C5N Cloud System (36c/node)</DESC>
-    <NODENAME_REGEX>*.dy-c5n18xlarge.*</NODENAME_REGEX>
+    <NODENAME_REGEX>dy-c5n18xlarge</NODENAME_REGEX>
     <OS>LINUX</OS>
     <COMPILERS>intel</COMPILERS>
     <MPILIBS>impi</MPILIBS>
