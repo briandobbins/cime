@@ -221,22 +221,16 @@ This allows using a different mpirun command to launch unit tests
     <MAX_MPITASKS_PER_NODE>96</MAX_MPITASKS_PER_NODE>
     <PROJECT_REQUIRED>FALSE</PROJECT_REQUIRED>
     <mpirun mpilib="default">
-      <executable>srun</executable>
+      <executable>scontrol show hostnames $SLURM_JOB_NODELIST > hostfile  ;  mpirun --machinefile hostfile </executable>
       <arguments>
         <arg name="num_tasks">-n {{ total_tasks }}</arg>
-        <arg name="bindinfo"> --cpu-bind=verbose </arg>
-        <arg name="cpu_bind">--cpu_bind=sockets --cpu_bind=verbose</arg>
-        <arg name="kill-on-bad-exit">--kill-on-bad-exit</arg>
+        <arg name="cpu_bind">--map-by socket --bind-to core</arg>
       </arguments>
     </mpirun>
     <module_system type="none"/>
     <environment_variables>
       <env name="OMP_STACKSIZE">256M</env>
       <env name="TMPDIR">/scratch/$USER</env>
-      <env name="I_MPI_CC">icc</env>
-      <env name="I_MPI_CXX">icpc</env>
-      <env name="I_MPI_FC">ifort</env>
-      <env name="I_MPI_F90">ifort</env>
     </environment_variables>
     <resource_limits>
       <resource name="RLIMIT_STACK">-1</resource>
